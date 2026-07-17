@@ -9,7 +9,11 @@ instruction="${5:-}"
 confirmation="${6:-}"
 preview_token="${7:-}"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-node_script="$script_dir/../../worktree-package/scripts/worktree.mjs"
+node_script="$script_dir/../../worktrees/scripts/worktree.mjs"
+if [[ ! -f "$node_script" ]]; then
+  printf '%s\n' 'Missing worktrees runtime. Install isolate, integrate, discard, and worktrees together from the same skills.sh source.' >&2
+  exit 1
+fi
 arguments=(
   "$node_script"
   integrate

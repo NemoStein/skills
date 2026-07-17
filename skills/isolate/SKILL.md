@@ -7,7 +7,7 @@ description: Isolate new repository work in a managed sibling Git worktree. Use 
 
 Begin a managed worktree round trip: create one branch and sibling worktree with a recorded route back to its base.
 
-Consult the [package contract](../worktree-package/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
+Consult the [package contract](../worktrees/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
 
 ## Steps
 

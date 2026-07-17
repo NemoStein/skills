@@ -7,7 +7,7 @@ description: Integrate completed managed-worktree commits into their recorded ba
 
 Finish the managed round trip by landing completed work on its recorded base and removing the isolated branch and folder.
 
-Consult the [package contract](../worktree-package/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
+Consult the [package contract](../worktrees/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
 
 ## Steps
 

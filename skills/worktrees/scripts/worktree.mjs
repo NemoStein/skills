@@ -518,14 +518,14 @@ const runIsolate = (options) => {
     throw new WorktreeError(`Base branch must have a registered worktree: ${base}`)
   }
 
+  const worktreeName = branch.replaceAll('/', '_')
   const worktrees = listWorktrees(repoRoot)
-  const primaryWorktree = worktrees.find((record) => !record.bare) ?? baseRecord
-  const packageMain = path.join(repoRoot, 'main')
-  const packageLayout = existsSync(packageMain) && worktrees.some((record) => samePath(record.path, packageMain))
-  const worktreeName = branch.replaceAll(/[\\/]/g, '-')
-  const targetPath = packageLayout
-    ? path.join(repoRoot, worktreeName)
-    : path.join(path.dirname(primaryWorktree.path), `${path.basename(primaryWorktree.path)}-${worktreeName}`)
+  const bareRootLayout = worktrees.some((record) => record.bare)
+  const projectWorktree = worktrees.find((record) => record.branch === 'main') ?? baseRecord
+  const folderName = bareRootLayout
+    ? worktreeName
+    : `${path.basename(projectWorktree.path)}.${worktreeName}`
+  const targetPath = path.join(path.dirname(baseRecord.path), folderName)
   if (existsSync(targetPath) || registeredWorktree(repoRoot, targetPath)) {
     throw new WorktreeError(`Target worktree already exists: ${targetPath}`)
   }

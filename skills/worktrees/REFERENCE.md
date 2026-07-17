@@ -14,7 +14,7 @@ The package uses one implementation, [`scripts/worktree.mjs`](scripts/worktree.m
 ## Scope
 
 - `<repo-root>` is any registered checkout in the repository. The launchers accept the current worktree root and resolve the stable base worktree themselves.
-- New worktrees are siblings. A conventional clone named `project` creates `project-<branch-slug>`; a bare worktree root containing `main/` creates `<branch-slug>` beside `main/`.
+- New worktrees are siblings named after their lifecycle branch, replacing `/` with `_`: `type/short-kebab-description` creates `type_short-kebab-description` beside a bare-root base worktree. Conventional repositories prefix that name with the project and a period: `project.type_short-kebab-description`.
 - Lifecycle branches use `type/short-kebab-description`.
 - `integrate` and `discard` operate only on branches created by `isolate`.
 - The package does not fetch, push, open pull requests, install dependencies, or operate on unmanaged branches.
@@ -86,7 +86,7 @@ Every successful run prints `operation`, `state`, `repoRoot`, `branch`, and rele
 Run the package lifecycle suite after changing instructions, launchers, or implementation:
 
 ```text
-node --test .agents/skills/worktree-package/tests/worktree.test.mjs
+node --test .agents/skills/worktrees/tests/worktree.test.mjs
 ```
 
 The suite must cover conventional and bare-root layouts, isolate, integrate, stale preview, discard loss, active-session deferred cleanup, and platform launchers.
