@@ -1,0 +1,10 @@
+{
+  "name": "@nemostein/skills",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:worktrees",
+    "test:worktrees": "node --test skills/isolate/tests/worktree.test.mjs"
+  }
+}
