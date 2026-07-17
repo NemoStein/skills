@@ -17,9 +17,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$script = Join-Path $PSScriptRoot "..\..\worktrees\scripts\worktree.mjs"
+$script = Join-Path $PSScriptRoot "..\..\isolate\scripts\worktree.mjs"
 if (-not (Test-Path -LiteralPath $script -PathType Leaf)) {
-  throw "Missing worktrees runtime. Install isolate, integrate, discard, and worktrees together from the same skills.sh source."
+  throw "Missing isolate lifecycle runtime. Install isolate and integrate together from the same skills.sh source."
 }
 $arguments = @(
   $script,

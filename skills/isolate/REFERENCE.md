@@ -86,7 +86,7 @@ Every successful run prints `operation`, `state`, `repoRoot`, `branch`, and rele
 Run the package lifecycle suite after changing instructions, launchers, or implementation:
 
 ```text
-node --test .agents/skills/worktrees/tests/worktree.test.mjs
+node --test .agents/skills/isolate/tests/worktree.test.mjs
 ```
 
-The suite must cover conventional and bare-root layouts, isolate, integrate, stale preview, discard loss, active-session deferred cleanup, and platform launchers.
+The suite exercises the canonical runtime across isolate, integrate, and discard. Add a regression for every changed lifecycle behavior.

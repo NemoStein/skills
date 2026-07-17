@@ -13,9 +13,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$script = Join-Path $PSScriptRoot "..\..\worktrees\scripts\worktree.mjs"
+$script = Join-Path $PSScriptRoot "worktree.mjs"
 if (-not (Test-Path -LiteralPath $script -PathType Leaf)) {
-  throw "Missing worktrees runtime. Install isolate, integrate, discard, and worktrees together from the same skills.sh source."
+  throw "Missing isolate lifecycle runtime. Reinstall the isolate skill from the same skills.sh source."
 }
 $prompt = if ([string]::IsNullOrWhiteSpace($HandoffPrompt)) { $UserPrompt } else { $HandoffPrompt }
 $arguments = @(

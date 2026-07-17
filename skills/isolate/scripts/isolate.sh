@@ -6,9 +6,9 @@ branch_name="${2:?usage: isolate.sh <repo-root> <branch-name> [base-branch] [han
 base_branch="${3:-}"
 handoff_prompt="${4:-}"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-node_script="$script_dir/../../worktrees/scripts/worktree.mjs"
+node_script="$script_dir/worktree.mjs"
 if [[ ! -f "$node_script" ]]; then
-  printf '%s\n' 'Missing worktrees runtime. Install isolate, integrate, discard, and worktrees together from the same skills.sh source.' >&2
+  printf '%s\n' 'Missing isolate lifecycle runtime. Reinstall the isolate skill from the same skills.sh source.' >&2
   exit 1
 fi
 arguments=(

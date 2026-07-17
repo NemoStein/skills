@@ -7,7 +7,7 @@ description: Discard a managed isolated worktree, its branch, and its files with
 
 Finish the managed round trip by abandoning isolated work, leaving the recorded base unchanged, and removing the isolated branch and folder.
 
-Consult the [package contract](../worktrees/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
+`discard` is a companion to `isolate`; install both skills from the same source. Consult the [lifecycle contract](../isolate/REFERENCE.md) when recovering from failure or changing package behavior; the steps below are the execution path.
 
 ## Steps
 
