@@ -1,0 +1,4 @@
+interface:
+  display_name: "Discard"
+  short_description: "Abandon an isolated worktree safely"
+  default_prompt: "Use $discard to abandon this isolated worktree and clean it up."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Integrate"
+  short_description: "Land an isolated worktree safely"
+  default_prompt: "Use $integrate to merge this isolated work back into its return branch."

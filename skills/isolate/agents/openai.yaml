@@ -1,0 +1,4 @@
+interface:
+  display_name: "Isolate"
+  short_description: "Create an isolated Git worktree"
+  default_prompt: "Use $isolate to start this task in a separate Git worktree."
